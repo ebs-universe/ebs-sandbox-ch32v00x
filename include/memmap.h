@@ -1,0 +1,10 @@
+
+
+#define MEMMAP_ENABLE_FASTDATA     0
+#define MEMMAP_ENABLE_FASTEXEC     0
+#define MEMMAP_ENABLE_SHAREDATA    0
+
+#define MEMMAP_RAM_START            0x20000000
+#define MEMMAP_RAM_END              0x20000800
+#define MEMMAP_FLASH_START          0x08000000
+#define MEMMAP_FLASH_END            0x08004000
