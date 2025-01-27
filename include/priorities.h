@@ -1,11 +1,11 @@
 
 
-#include "funconfig.h"
+#include "ch32v00x.h"
 
 #define uC_NVIC_PRIORITY_CONF   NVIC_PriorityGroup_0
 
-#define PRIO_INT_HIGHEST        1
-#define PRIO_INT_HIGH           1
+#define PRIO_INT_HIGHEST        0
+#define PRIO_INT_HIGH           0
 #define PRIO_INT_NORMAL         0
 #define PRIO_INT_LOW            0
 #define PRIO_NONE               0xFF

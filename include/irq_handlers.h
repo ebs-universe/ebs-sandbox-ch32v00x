@@ -23,7 +23,8 @@
  * @name Core IRQ Handlers
  */
 /**@{*/
-void SysTick_Handler(void)  INTERRUPT_DECORATOR;
+
+__attribute__((interrupt)) void SysTick_Handler(void);
 /**@}*/ 
 
 /**

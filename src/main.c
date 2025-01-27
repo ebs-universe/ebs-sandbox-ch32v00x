@@ -6,8 +6,10 @@
 
 #include "bsp/gpio.h"
 #include "ebs/time_if.h"
-
 #include <ucdm/ucdm.h>
+
+#include <blink.h>
+
 
 static void setup_handlers(void) {
 	__core_handler_inclusion = 1;
@@ -34,7 +36,9 @@ static ucdm_addr_t setup_peripherals(ucdm_addr_t ucdm_address) {
 	#if APP_ENABLE_TIME_SYNC
         setup_time_sync();
     #endif
-    
+	#if APP_ENABLE_OUTPUT_BLINK
+        start_blink_task();
+    #endif
 	return ucdm_address;
 }
 
@@ -56,9 +60,8 @@ int main(void)
 	
 	while(1)
 	{
-		gpio_set_output_low(GPIO_LED1);
-		// Delay_Ms(250);
-		// gpio_set_output_low(GPIO_LED1);
-		// Delay_Ms(250);
-	}
+		#if APP_ENABLE_TIME_CRON
+        	tm_cron_poll();
+        #endif
+	}	
 }

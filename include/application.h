@@ -52,5 +52,26 @@
     #define APP_ENABLE_QDELAY          1 
 /**@}*/ 
 
+/**
+ * @name Application Device ID Configuration
+ */
+/**@{*/   
+    #define APP_ENABLE_ID               1
+/**@}*/ 
+
+/**
+ * @name Application Common Infrastructure Configuration
+ */
+/**@{*/   
+    #define APP_ENABLE_OUTPUT_BLINK     1
+    #define BLINK_GPIO                  GPIO_LED1
+    #define BLINK_POLARITY              0
+
+    #define APP_ENABLE_OUTPUT_ERROR     1
+    #define ERROR_GPIO                  GPIO_LED2
+    #define ERROR_POLARITY              0
+/**@}*/
+
+
 #endif
 

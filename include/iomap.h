@@ -5,7 +5,8 @@
 extern "C" {
 #endif
 
-#include "ch32v003fun.h"
+#include "ch32v_conf.h"
+#include "ch32v00x.h"
 
 #include "memmap.h"
 #include "clocktree.h"

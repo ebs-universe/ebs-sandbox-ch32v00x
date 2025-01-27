@@ -1,0 +1,7 @@
+
+#ifndef CH32V_CONF_H
+#define CH32V_CONF_H
+
+#define INTSYSCR_INEST   INTSYSCR_INEST_NoEN
+
+#endif

@@ -5,9 +5,9 @@
 
 static void gpio_init_board_leds(void){
     gpio_conf_output(GPIO_LED1);
-    gpio_set_output_low(GPIO_LED1);
+    gpio_set_output_high(GPIO_LED1);
 	gpio_conf_output(GPIO_LED2);
-    gpio_set_output_low(GPIO_LED2);
+    gpio_set_output_high(GPIO_LED2);
 }
 
 static void gpio_init_board_debug(void){
