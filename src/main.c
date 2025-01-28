@@ -10,6 +10,8 @@
 
 #include <blink.h>
 
+#include <demos/tm1637_demo.h>
+
 
 static void setup_handlers(void) {
     __core_handler_inclusion = 1;
@@ -57,7 +59,9 @@ int main(void)
     ucdm_addr_t ucdm_address = 1;
     ucdm_address = setup_system(ucdm_address);
     ucdm_address = setup_application(ucdm_address);
-	
+
+	start_tm1637_demo();
+
     while(1)
     {
         #if APP_ENABLE_TIME_CRON

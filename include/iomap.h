@@ -5,7 +5,6 @@
 extern "C" {
 #endif
 
-#include "ch32v_conf.h"
 #include "ch32v00x.h"
 
 #include "memmap.h"
@@ -48,6 +47,54 @@ extern "C" {
 #define GPIO_USART_RX       USART_RX_PORT, USART_RX_PIN
 /**@}*/ 
 
+/**
+ * @name GPIOs associated with the TM1637 7 segment driver
+ * 
+ */
+/**@{*/ 
+#define TM1637_CLK_PIN      2
+#define TM1637_CLK_PORT     GPIOD_BASE
+#define GPIO_TM1637_CLK     TM1637_CLK_PORT, TM1637_CLK_PIN
+
+#define TM1637_DAT_PIN      3
+#define TM1637_DAT_PORT     GPIOD_BASE
+#define GPIO_TM1637_DAT     TM1637_DAT_PORT, TM1637_DAT_PIN
+/**@}*/
+
+/**
+ * @name SPI GPIOs
+ * 
+ */
+/**@{*/ 
+#define GPIO_REMAP_SPI      1
+
+#define SPI_MISO_PIN        7
+#define SPI_MISO_PORT       GPIOC_BASE
+#define GPIO_SPI_MISO       SPI_MISO_PORT, SPI_MISO_PIN
+
+#define SPI_MOSI_PIN        6
+#define SPI_MOSI_PORT       GPIOC_BASE
+#define GPIO_SPI_MOSI       SPI_MOSI_PORT, SPI_MOSI_PIN
+
+#define SPI_CLK_PIN         5
+#define SPI_CLK_PORT        GPIOC_BASE
+#define GPIO_SPI_CLK        SPI_CLK_PORT, SPI_CLK_PIN
+
+#if GPIO_REMAP_SPI
+
+#define SPI_NSS_PIN         0
+#define SPI_NSS_PORT        GPIOC_BASE
+#define GPIO_SPI_NSS        SPI_NSS_PORT, SPI_NSS_PIN
+
+#else
+
+#define SPI_NSS_PIN         1
+#define SPI_NSS_PORT        GPIOC_BASE
+#define GPIO_SPI_NSS        SPI_NSS_PORT, SPI_NSS_PIN
+
+#endif
+
+/**@}*/
 
 #ifdef __cplusplus
 }
