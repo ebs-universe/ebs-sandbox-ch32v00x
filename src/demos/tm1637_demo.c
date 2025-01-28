@@ -59,9 +59,11 @@ tm1637_brightness_t brightness = 0;
 
 void tm1637_demo_step(void) {
     #if TM1637_SINGLETON
-    tm1637_set_display_number(num, pos_spec);
+    // tm1637_set_display_number(num, pos_spec);
+    tm1637_printf("%7.1f", (float)num / 10);
     #else  
-    tm1637_set_display_number(&tm1637_demo, num, pos_spec);
+    // tm1637_set_display_number(&tm1637_demo, num, pos_spec);
+    tm1637_printf(&tm1637_demo, '%7.1f', (float)num / 10);
     #endif
     num ++;
 
